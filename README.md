@@ -1,0 +1,1 @@
+# app-template\n\nTemplate for applications built with Hermes, Claude Code, and GSD, deployed to Dokploy.\n

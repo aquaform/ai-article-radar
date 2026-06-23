@@ -1,0 +1,1 @@
+@AGENTS.md\n\n## Claude-специфика\n- Для любой разработки используем рабочий процесс GSD (discuss → plan → execute → verify).\n- Деплой — только командой /deploy с applicationId Dokploy.\n- Никогда не читать и не выводить .env.\n
