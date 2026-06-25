@@ -1,0 +1,13 @@
+Прими задачу как developer/executor App Factory.
+
+Прочитай `@TASK.md` и выполни его полностью: реализуй приложение, проверь, создай GitHub repo, задеплой в Dokploy и добейся рабочего публичного URL.
+
+Условия:
+- Hermes только мониторит; код, git/GitHub и Dokploy делаешь ты.
+- Пользователь уже попросил «сделать и задеплоить», поэтому после краткого плана можешь продолжать без дополнительного одобрения, если не нужно разрушительных действий.
+- Не выводи секреты и не читай `.env`; Dokploy credentials доступны как env vars.
+- Для Dokploy используй `serverId: k8OseZqzTv9XkJuPnzIf4`, `sourceType: git`, domain `ai-article-radar.apps.sielom.ru`, port 3000, HTTPS letsencrypt.
+- Если источник VC/Habr/Dzen недоступен или блокирует — реализуй graceful degraded diagnostics, но не подставляй фейковые статьи.
+- Done только после реальных проверок: tests/build, local `/health`, deploy status, public `/health`, public UI/API.
+
+Начинай. Ultrathink where useful, but keep final report concise with evidence.

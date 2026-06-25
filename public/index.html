@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>AI Article Radar</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>📡</text></svg>" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="title-row">
+      <h1>📡 AI Article Radar</h1>
+      <button id="refreshBtn" class="btn btn-primary" type="button">Обновить</button>
+    </div>
+    <p class="subtitle">Свежие материалы про ИИ с VC.ru, Habr и Дзена</p>
+    <div id="status" class="status-bar" aria-live="polite"></div>
+  </header>
+
+  <section class="controls">
+    <input id="search" class="search" type="search" placeholder="Поиск по заголовку, саммари, тегам…" />
+    <div class="filters">
+      <label>Источник
+        <select id="sourceFilter">
+          <option value="">Все</option>
+          <option value="habr">Habr</option>
+          <option value="vc">VC.ru</option>
+          <option value="dzen">Дзен</option>
+        </select>
+      </label>
+      <label>Статус
+        <select id="statusFilter">
+          <option value="">Все</option>
+          <option value="new">Новое</option>
+          <option value="want">Хочу прочитать</option>
+          <option value="reading">Читаю</option>
+          <option value="read">Прочитано</option>
+          <option value="skip">Не интересно</option>
+          <option value="archive">Архив</option>
+        </select>
+      </label>
+      <label class="checkbox">
+        <input id="hideSkip" type="checkbox" checked /> Скрыть «Не интересно»
+      </label>
+    </div>
+    <div class="io-buttons">
+      <button id="exportBtn" class="btn" type="button">Экспорт статусов</button>
+      <button id="importBtn" class="btn" type="button">Импорт</button>
+      <button id="exportMdBtn" class="btn" type="button">«Хочу прочитать» → MD</button>
+      <input id="importFile" type="file" accept="application/json" hidden />
+    </div>
+  </section>
+
+  <main id="list" class="list"></main>
+  <div id="empty" class="empty" hidden>Ничего не найдено по текущим фильтрам.</div>
+
+  <footer class="app-footer">
+    Статусы хранятся локально в браузере. Саммари — эвристические, без LLM.
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
